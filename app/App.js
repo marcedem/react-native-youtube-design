@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import VideoItem from './components/videoItem';
 export default class App extends React.Component {
   render() {
     return (
@@ -9,9 +9,36 @@ export default class App extends React.Component {
         <View style={styles.navBar}>
           <Image source={require('./img/yt_logo_rgb_light.png')} style={styles.youtubeLogo}/>
           <View style={styles.rightNav}>
-            <Icon name="search" style={styles.searchIcon}/>
-            <Icon name="account-circle" style={styles.searchIcon}/>
+            <TouchableOpacity>
+              <Icon style={styles.navItem} name="search" size={25}/>  
+            </TouchableOpacity>
+            <Icon style={styles.navItem} name="account-circle" size={25}/>
           </View>
+        </View>
+        <View style={styles.body}>
+
+        </View>
+        <View style={styles.tabBar}>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name="home" size={25} />
+            <Text style={styles.tabTitle}>Home</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name="whatshot" size={25} />
+            <Text style={styles.tabTitle}>Trending</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name="subscriptions" size={25} />
+            <Text style={styles.tabTitle}>Subsriptions</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name="notifications" size={25} />
+            <Text style={styles.tabTitle}>Activity</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name="folder" size={25} />
+            <Text style={styles.tabTitle}>Library</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -37,8 +64,27 @@ const styles = StyleSheet.create({
   },
   rightNav:{
     flexDirection: 'row'
-  }
-  searchIcon:{
-    fontSize: 25,
-  }
+  },
+  navItem:{
+    marginLeft: 25,
+  },
+  body:{
+    flex: 1,
+  },
+  tabBar: {
+    backgroundColor: '#FFF',
+    height: 60,
+    borderTopWidth: 0.5,
+    borderColor: '#E5E5E5', 
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  tabItem:{
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tabTitle:{
+    color: '#3C3C3C',
+    fontSize: 11,
+  },
 });
