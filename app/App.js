@@ -8,9 +8,10 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View style={styles.navBar}>
           <Image source={require('./img/yt_logo_rgb_light.png')} style={styles.youtubeLogo}/>
-        </View>
-        <View style={styles.rightNav}>
-          <Icon></Icon>
+          <View style={styles.rightNav}>
+            <Icon name="search" style={styles.searchIcon}/>
+            <Icon name="account-circle" style={styles.searchIcon}/>
+          </View>
         </View>
       </View>
     );
@@ -28,9 +29,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
   youtubeLogo:{
     width: 98,
     height: 22,
+  },
+  rightNav:{
+    flexDirection: 'row'
+  }
+  searchIcon:{
+    fontSize: 25,
   }
 });
