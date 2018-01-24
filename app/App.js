@@ -10,7 +10,7 @@ export default class App extends React.Component {
           <Image source={require('./img/yt_logo_rgb_light.png')} style={styles.youtubeLogo}/>
         </View>
         <View style={styles.rightNav}>
-
+          <Icon></Icon>
         </View>
       </View>
     );
