@@ -63,3 +63,4 @@ node_modules
 *.apk
 
 /.gradle
+fileSnapshots.bin
